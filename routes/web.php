@@ -30,6 +30,7 @@ Route::post('/laporan_masuk', 'LaporanController@index');
 Route::get('/laporan/export_pdf', 'LaporanController@cetak_pdf');
 Route::get('/laporan/barang-masuk', 'LaporanController@laporan');
 Route::post('/laporan-masuk', 'LaporanController@laporan');
+Route::get('/laporan/stok', 'LaporanController@stok_barang');
 Route::get('/print-pdf', 'LaporanController@print_pdf');
 
 

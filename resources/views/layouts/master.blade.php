@@ -93,7 +93,12 @@
       <li class="nav-item {{ (request()->is('admin*')) ? 'active' : '' }}">
         <a class="nav-link" href="/barang">
           <i class="fas fa-fw fa-briefcase"></i>
-          <span>Barang</span></a>
+          <span>Master Barang</span></a>
+      </li>
+      <li class="nav-item {{ (request()->is('admin*')) ? 'active' : '' }}">
+        <a class="nav-link" href="/stok">
+          <i class="fas fa-fw fa-briefcase"></i>
+          <span>Stok Barang</span></a>
       </li>
       <li class="nav-item {{ (request()->is('admin*')) ? 'active' : '' }}">
         <a class="nav-link" href="/transaksi">

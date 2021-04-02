@@ -18,7 +18,7 @@
     	 	@if( Session::get('pesan') !="")
             <div class='alert alert-success'><center><b>{{Session::get('pesan')}}</b></center></div>        
             @endif
-            <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Barang</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#tambah"><i class="fas fa-plus"></i> Tambah Barang</button>
             <br>
             <br>
             <table id="dataTable" class="table table-bordered" cellspacing="0">
@@ -102,6 +102,15 @@
 </div>
 </div>
 
+<script type="text/javascript">
+    
+$(document).ready( function () {
+  var table = $('#dataTable').DataTable( {
+    pageLength : 5,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]
+  } )
+} );
+</script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css"/>
 @endsection

@@ -11,7 +11,7 @@
     	 	@if( Session::get('pesan') !="")
             <div class='alert alert-success'><center><b>{{Session::get('pesan')}}</b></center></div>        
             @endif
-            <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Kategori</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#tambah"><i class="fas fa-plus"></i> Tambah Kategori</button>
             <br>
             <br>
             <table id="dataTable" class="table table-bordered" cellspacing="0">
@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{++$i}}</td>
                         <td>{{$k->nama_kategori}}</td>
-                        <td><a href="{{route('kategori.edit', $k->id)}}" class="btn btn-primary btn-sm ml-2">Edit</a></td>
+                        <td><a href="{{route('kategori.edit', $k->id)}}" class="btn btn-primary btn-sm ml-2"><i class="fa fa-edit"></i></a></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -61,4 +61,13 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
+    
+$(document).ready( function () {
+  var table = $('#dataTable').DataTable( {
+    pageLength : 5,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]
+  } )
+} );
+</script>
 @endsection

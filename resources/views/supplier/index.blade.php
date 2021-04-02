@@ -18,7 +18,7 @@
                 @endforeach
             </ul>
             @endif
-            <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Supplier</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#tambah"><i class="fas fa-plus"></i>Tambah Supplier</button>
             <br>
             <br>
             <table id="dataTable" class="table table-bordered" cellspacing="0">
@@ -38,7 +38,7 @@
                         <td>{{$k->kode_supplier}}</td>
                         <td>{{$k->nama_supplier}}</td>
                         <td>{{$k->no_wa}}</td>
-                        <td><a href="{{route('supplier.edit', $k->id)}}" class="btn btn-primary btn-sm ml-2">Edit</a></td>
+                        <td><a href="{{route('supplier.edit', $k->id)}}" class="btn btn-primary btn-sm ml-2"><i class="fa fa-edit"></i></a></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -80,4 +80,13 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
+    
+$(document).ready( function () {
+  var table = $('#dataTable').DataTable( {
+    pageLength : 5,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]
+  } )
+} );
+</script>
 @endsection

@@ -14,10 +14,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -26,7 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $jumlah_pendapatan=DB::table('terjuals')->sum('total_harga');
+        $jumlah_transaksi=DB::table('terjuals')->count();
+        $jumlah_barang=DB::table('barang')->count();
+        $jumlah_barang_masuk = DB::table('barang_ins')->count();
+
         
-        return view('home');
+         return view('home',compact('jumlah_pendapatan','jumlah_transaksi','jumlah_barang','jumlah_barang_masuk'));
     }
 }

@@ -39,4 +39,9 @@ class LaporanController extends Controller
       $pdf = PDF::loadview('laporan.masuk_pdf',compact('laporans'))->setPaper('a4', 'landscape');
         return $pdf->download('laporan.pdf');
     }
+    public function stok_barang()
+    {
+        $barangs = Barang::all();
+        return view('laporan.stok_barang', compact('barangs'));
+    }
 }

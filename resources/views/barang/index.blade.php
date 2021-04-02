@@ -18,7 +18,7 @@
     	 	@if( Session::get('pesan') !="")
             <div class='alert alert-success'><center><b>{{Session::get('pesan')}}</b></center></div>        
             @endif
-            <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Barang</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#tambah"><i class="fas fa-plus"></i> Tambah Barang</button>
             <br>
             <br>
             <table id="dataTable" class="table table-bordered" cellspacing="0">
@@ -42,7 +42,7 @@
                         <td>{{$u->nama_barang}}</td>
                         <td>Rp. {{number_format($u->harga_jual,0,',','.')}}</td>
                         <td>{{$u->kategori->nama_kategori}}</td>
-                        <td><img src="{{asset('/images/' . $u->gambar)}}" class="img-thumbnail" alt="Responsive image"></td>
+                        <td><img src="{{asset('/images/' . $u->gambar)}}" class="img-thumbnail" alt="Responsive image" width="100"></td>
                         <td>{{$u->size}}</td>
                         <td><a href="{{route('barang.edit', $u->id)}}" class="btn btn-primary btn-sm ml-2"><i class="fa fa-edit"></i></a></td>
                     </tr>
@@ -116,7 +116,15 @@
     </div>
 </div>
 </div>
-
+<script type="text/javascript">
+    
+$(document).ready( function () {
+  var table = $('#dataTable').DataTable( {
+    pageLength : 5,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]
+  } )
+} );
+</script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css"/>
 @endsection
