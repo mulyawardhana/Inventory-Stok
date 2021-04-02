@@ -15,6 +15,9 @@
                 @endforeach
             </ul>
             @endif
+            @if( Session::get('pesan1') !="")
+            <div class='alert alert-danger'><center><b>{{Session::get('pesan1')}}</b></center></div>        
+            @endif
            <form action="{{route('transaksi.store')}}" method="post">
                 @csrf
                     <font color="blue">Kode Transaksi : {{$inv}}</font>
@@ -78,9 +81,6 @@
             @endif
             @if( Session::get('pesan') !="")
             <div class='alert alert-success'><center><b>{{Session::get('pesan')}}</b></center></div>        
-            @endif
-            @if( Session::get('pesan1') !="")
-            <div class='alert alert-danger'><center><b>{{Session::get('pesan1')}}</b></center></div>        
             @endif
      <!--        <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Terjual</button> -->
             <br>

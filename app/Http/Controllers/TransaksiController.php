@@ -51,12 +51,12 @@ class TransaksiController extends Controller
        
         $this->validate($request,[
             'barang_id'   => 'required',
-            'qty'       => 'required',
+            'qty'       => 'required|numeric',
             'inv'           => 'required',
         ]);
         $barang = Barang::find($request->barang_id);
         if($barang->stok < $request->qty){
-            return redirect('/terjual')->with('pesan1','Maaf Stok anda tidak mencukupi silahkan cek Stok Barang');
+            return redirect('/transaksi')->with('pesan1','Maaf Stok anda tidak mencukupi silahkan cek Stok Barang');
         }else{
             $terjual = Terjual::create([
             'barang_id'       => $request->barang_id,
