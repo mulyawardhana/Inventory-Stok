@@ -38,6 +38,17 @@
 					<input type="text" name="harga_jual" class="form-control" value="{{$barang->harga_jual}}">
 				</div>
 				<div class="form-group">
+	            <label>Size</label>
+		            <select class="form-control" name="size">
+		                <option value="{{$barang->size}}" selected>--Pilih Size--</option>
+		                <option value="S">S</option>
+		                <option value="M">M</option>
+		                <option value="L">L</option>
+		                <option value="XL">XL</option>
+		                <option value="XXL">XXL</option>
+		            </select>
+		        </div>
+				<div class="form-group">
 					<label for="gambar">Gambar</label>
 					<div class="card mb-3" style="width: 10rem;">
 						<div class="card-body">
