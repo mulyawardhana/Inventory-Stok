@@ -40,7 +40,7 @@
 				<div class="form-group">
 	            <label>Size</label>
 		            <select class="form-control" name="size">
-		                <option value="{{$barang->size}}" selected>--Pilih Size--</option>
+		                <option value="{{$barang->size}}" selected>{{$barang->size}}</option>
 		                <option value="S">S</option>
 		                <option value="M">M</option>
 		                <option value="L">L</option>

@@ -31,19 +31,19 @@
                             </select>
                             </div>
                         </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label for="">Harga</label>
                         <input type="text" name="harga_jual" class="form-control" id="harga_jual" readonly>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label for="">Stok</label>
                         <input type="text" name="stok" class="form-control" id="stok" readonly>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label for="">qty</label>
                         <input type="text" name="qty" class="form-control">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label for="">lokasi</label>
                         <select name="lokasi" class="form-control" id="">
                                     <option value="" disabled selected>Pilih Lokasi Penjualan</option>
@@ -56,7 +56,7 @@
                                 </select>
                     </div>
                         <div class="col-md-12 mt-3">
-                            <center><input type="submit" class="btn btn-success " value="Submit"></center>
+                            <center><input type="submit" class="btn btn-success form-control" value="Submit"></center>
                         </div>
                     </form>
                 </div>
