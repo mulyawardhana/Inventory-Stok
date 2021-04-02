@@ -113,8 +113,24 @@ class BarangController extends Controller
             'kategori_id'       => 'required',
             'kode_barang'       => 'required',
             'nama_barang'       => 'required', 
-             'gambar'            => 'required'
+            'gambar'            => 'required'
         ]);
+        if($request->has('gambar')){
+
+            $gambar =$request->gambar;
+            $new_gambar = time().$gambar->getClientOriginalName();
+            $gambar->move(public_path('images'), $new_gambar);
+
+            $barang = [
+            'kategori_id'       => $request->kategori_id,
+            'kode_barang'       => $request->kode_barang,
+            'nama_barang'       => $request->nama_barang,
+            'harga_jual'        => $request->harga_jual,
+            'stok'              => $request->stok,
+            'gambar'            => $new_gambar,
+            'size'              => $request->size,
+        ];
+        }else{
         $barang = [
             'kategori_id'       => $request->kategori_id,
             'kode_barang'       => $request->kode_barang,
@@ -123,8 +139,10 @@ class BarangController extends Controller
             'created_at'        => $request->created_at,
             'gambar'            => $request->gambar,
         ];
+        }
         Barang::whereId($id)->update($barang);
         return redirect('/barang')->with('pesan','Data Master berhasil di Edit');
+            
     }
 
     /**

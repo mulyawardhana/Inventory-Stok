@@ -10,7 +10,7 @@
 				@endforeach
 			</ul>
 			@endif
-			<form action="{{route('barang.update', $barang->id)}}" method="POST">
+			<form action="{{route('barang.update', $barang->id)}}" method="POST" enctype="multipart/form-data">
 				@csrf
 				@method('PUT')
 				<div class="form-group">
@@ -36,6 +36,15 @@
 				<div class="form-group">
 					<label for="harga_jual">Harga Jual</label>
 					<input type="text" name="harga_jual" class="form-control" value="{{$barang->harga_jual}}">
+				</div>
+				<div class="form-group">
+					<label for="gambar">Gambar</label>
+					<div class="card mb-3" style="width: 10rem;">
+						<div class="card-body">
+						<img src="{{asset('/images/' . $barang->gambar)}}" class="img-thumbnail" alt="Responsive image">
+						</div>
+					</div>
+					<input type="file" name="gambar" class="form-control" value="{{$barang->gambar}}">
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Simpan</button>
