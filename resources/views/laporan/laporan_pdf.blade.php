@@ -35,6 +35,10 @@
             </tr>
         @endforeach
         </tbody>
+         <tr>
+            <th colspan="6">Total :</th>
+            <th>Rp. {{number_format($laporans->sum('total_harga'),0,',','.')}}</th>
+        </tr>
 
 </table>
 </body>

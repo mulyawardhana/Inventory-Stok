@@ -26,7 +26,7 @@
         </tbody>
         <tr>
             <th colspan="6">Total :</th>
-            <th>{{$transaksi->sum('total_harga')}}</th>
+            <th>Rp. {{number_format($transaksi->sum('total_harga'),0,',','.')}}</th>
         </tr>
      
 </table>
