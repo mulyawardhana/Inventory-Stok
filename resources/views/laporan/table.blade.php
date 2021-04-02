@@ -24,5 +24,9 @@
             </tr>
         @endforeach
         </tbody>
+        <tr>
+            <th colspan="6">Total :</th>
+            <th>{{$transaksi->sum('total_harga')}}</th>
+        </tr>
      
 </table>

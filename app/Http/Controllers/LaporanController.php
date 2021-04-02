@@ -7,13 +7,14 @@ use App\Terjual;
 use App\Barang;
 use App\BarangIn;
 use PDF;
+use DB;
 
 class LaporanController extends Controller
 {
     public function index(Request $request)
     {
     	$transaksi = Terjual::whereBetween('created_at',[$request->tanggal1,$request->tanggal2])->get();
-
+   
     	$hitung =count($transaksi);
 	 	$req1=$request->tanggal1;
         $req2=$request->tanggal2;

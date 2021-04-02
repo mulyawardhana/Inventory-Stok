@@ -51,7 +51,7 @@
        </div>
     @endif  
        <br>
-    @include('laporan.table', $transaksi )
+    @include('laporan.table', $transaksi)
 
   </div>
 </div>
